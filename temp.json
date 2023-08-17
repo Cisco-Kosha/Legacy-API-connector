@@ -1,0 +1,15 @@
+{
+  "Legacy API": {
+    "credit_score": 775, 
+    "can_rent": true
+  }, 
+  "Internal Modern API": { 
+    "account_balance": 24340, 
+    "can_rent": true
+  }, 
+  "External Stripe Account": { 
+    "account_id": 124919491840,
+    "payment_type": "credit",
+    "can_rent": true
+  }
+}
