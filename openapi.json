@@ -16,6 +16,45 @@
     }
   ],
   "paths": {
+    "/conversations/{id}": {
+      "get": {
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/models.Conversation"
+                }
+              }
+            },
+            "description": "OK"
+          },
+          "404": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Conversation not found"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "description": "Bad request"
+          }
+        },
+        "tags": ["Records"],
+        "description": "Get Conversation by Id",
+        "summary": "This API is used to get a conversation by ID.  If the conversation is not found, a 404 is returned.  If an ID is not provided, a 400 is returned."
+      }
+    },
     "/v0/meta/bases": {
       "get": {
         "responses": {
@@ -30,9 +69,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Bases"
-        ],
+        "tags": ["Bases"],
         "description": "Get Bases",
         "summary": "Get airtable bases"
       }
@@ -76,9 +113,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Tables"
-        ],
+        "tags": ["Tables"],
         "description": "Create Tables",
         "summary": "Create Tables"
       },
@@ -111,9 +146,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Tables"
-        ],
+        "tags": ["Tables"],
         "description": "Get Tables",
         "summary": "Get Tables"
       }
@@ -171,9 +204,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Tables"
-        ],
+        "tags": ["Tables"],
         "description": "Update Table",
         "summary": "Update Table"
       }
@@ -231,9 +262,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Fields"
-        ],
+        "tags": ["Fields"],
         "description": "Create Fields",
         "summary": "Create Fields"
       },
@@ -289,9 +318,7 @@
             }
           }
         },
-        "tags": [
-          "Fields"
-        ],
+        "tags": ["Fields"],
         "description": "Update Fields",
         "summary": "Update Fields"
       }
@@ -350,9 +377,7 @@
             "description": "internal server error"
           }
         },
-        "tags": [
-          "specification"
-        ],
+        "tags": ["specification"],
         "description": "Get all environment variables that need to be supplied",
         "summary": "Get details of the connector specification"
       }
@@ -415,9 +440,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Records"
-        ],
+        "tags": ["Records"],
         "description": "Get Records",
         "summary": "Get Record"
       },
@@ -478,9 +501,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Records"
-        ],
+        "tags": ["Records"],
         "description": "Delete Records",
         "summary": "Delete Record"
       },
@@ -550,9 +571,7 @@
             }
           }
         },
-        "tags": [
-          "Records"
-        ],
+        "tags": ["Records"],
         "description": "Update Records",
         "summary": "Update Record"
       }
@@ -650,9 +669,7 @@
             }
           }
         },
-        "tags": [
-          "Records"
-        ],
+        "tags": ["Records"],
         "description": "Create Records",
         "summary": "Creates records"
       }
@@ -715,9 +732,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Comments"
-        ],
+        "tags": ["Comments"],
         "description": "List Comments",
         "summary": "List comments for the record from newest to oldest."
       }
@@ -766,9 +781,7 @@
             "description": "OK"
           }
         },
-        "tags": [
-          "Records"
-        ],
+        "tags": ["Records"],
         "description": "List Records",
         "summary": "List records"
       }
@@ -809,22 +822,14 @@
                   "type": "string"
                 }
               },
-              "required": [
-                "description",
-                "name",
-                "type"
-              ]
+              "required": ["description", "name", "type"]
             }
           },
           "name": {
             "type": "string"
           }
         },
-        "required": [
-          "description",
-          "fields",
-          "name"
-        ]
+        "required": ["description", "fields", "name"]
       },
       "models.CreateRecords": {
         "type": "object",
@@ -852,10 +857,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "description",
-          "name"
-        ]
+        "required": ["description", "name"]
       },
       "models.NewField": {
         "type": "object",
@@ -876,20 +878,13 @@
                 "type": "string"
               }
             },
-            "required": [
-              "color",
-              "icon"
-            ]
+            "required": ["color", "icon"]
           },
           "type": {
             "type": "string"
           }
         },
-        "required": [
-          "description",
-          "name",
-          "type"
-        ]
+        "required": ["description", "name", "type"]
       },
       "models.BasesStruct": {
         "properties": {
@@ -992,12 +987,7 @@
             "type": "string"
           }
         },
-        "required": [
-          "description",
-          "id",
-          "name",
-          "type"
-        ]
+        "required": ["description", "id", "name", "type"]
       },
       "models.Record": {
         "properties": {
